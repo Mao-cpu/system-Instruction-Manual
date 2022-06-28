@@ -1,0 +1,32 @@
+body{
+	background: white url("images/background3.jpg") no-repeat center center;
+	text-align: center;
+	border: 0;
+
+}
+
+#edit{margin: 0 auto; border: 1px solid #000;width: 600px;height: 650px;
+	background: #feeeed;
+ }
+ #title{
+ 	margin-left: 40px;
+ 	text-align: left;
+ 	font-size: 16px;
+
+ }
+ #content{
+ 	font-size: 16px;
+ 	font-weight: bold;
+ }
+ #textarea{
+ 	width: 550px;
+ }
+#contenttwo{
+	width: 550px;
+}
+#submit{
+    width: 100px;
+}
+#button{
+    width: 100px;
+}

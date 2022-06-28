@@ -1,0 +1,71 @@
+/* 这个 CSS 文件是放登陆页面的专属样式 */
+
+/* 1. 设置版心，让这个版心将页面填充满 */
+/* 2. 在版心中间位置，设置一个登陆区域 */
+.login-container {
+    width: 100%;
+    height: calc(100% - 50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container .login-dialog {
+    width: 400px;
+    height: 280px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+}
+
+.login-dialog h3 {
+    text-align: center;
+    padding: 30px;
+    font-size: 25px;
+}
+
+.login-dialog .row1 {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-dialog .row2 {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.login-dialog .row1 span {
+    width: 80px;
+    font-weight: 700;
+}
+
+.login-dialog .row1 input {
+    width: 200px;
+    height: 30px;
+    font-size: 15px;
+    padding-left: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+    /* 去掉边框 */
+    border: none;
+    /* 去掉轮廓线（选中输入框时，外面的黑边） */
+    outline: none;
+}
+
+.login-dialog .row2 input {
+    width: 270px;
+    height: 40px;
+    font-size: 15px;
+    padding-left: 10px;
+    border-radius: 8px;
+    background-color: rgba(41, 83, 149, 0.9);
+    border: none;
+}
+
+.login-dialog .row2 input:active {
+    background-color: black;
+    color: white;
+}

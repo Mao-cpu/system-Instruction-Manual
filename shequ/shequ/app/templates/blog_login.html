@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录页</title>
+    <link rel="stylesheet" href="{% static 'css/blog-login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/common.css' %}">
+    <style type="text/css">
+
+        .button1 {
+            width: 70px;
+            height: 30px;
+            line-height: 23px;
+            color: #ffffff;
+            font-size: 14px;
+            border-radius: 25px;
+            animation: zoomIn 1.5s infinite;
+            text-align: center;
+            float:left;
+            margin-top: 20px;
+            margin-left: 45px;
+            background-color: rgba(41, 83, 149, 0.7);
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <div class="nav">
+        <img src={% static 'image/log.png' %} alt="">
+        <a href="{% url 'blog_login' %}"><span class="title">背包知识社区平台</span></a>
+    </div>
+    <!-- 登录页面的版心 -->
+    <div class="login-container">
+        <form class="login-dialog" method="post" action="/">
+            <h3>登录</h3>
+            {% csrf_token %}
+            <div class="row1">
+                <span>用户名</span>
+                <input type="text" name="user" placeholder="用户名">
+            </div>
+            <div class="row1">
+                <span>密码</span>
+                <input type="password" name="pwd">
+            </div>
+            <div class="row2" style="width:100%">
+                    <input type="submit" value="登录">
+            </div>
+            <div class="button1">
+                 <a href="{% url 'register' %}" style="color: #e7e7e7;text-decoration: none;" ><span>注册</span></a>
+{#              <a href="{% url 'register' %}"  >注册</a>#}
+            </div>
+            <div class="button1">
+                <a href="{% url 'fp' %}" style="color: #e7e7e7;text-decoration: none;" ><span>忘记密码</span></a>
+            </div>
+             <div class="button1">
+                <a href="{% url 'mindex' %}" style="color: #e7e7e7;text-decoration: none;" ><span>管理员</span></a>
+            </div>
+        </form>
+    </div>
+    {% if messages %}
+<script>
+        {% for msg in messages %}
+            alert('{{ msg.message }}');
+        {% endfor %}
+    </script>
+{% endif %}
+</body>
+</html>

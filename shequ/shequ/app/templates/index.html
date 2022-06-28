@@ -1,0 +1,364 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页面</title>
+    <!-- header部分 -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css">
+<link rel="stylesheet" href="{% static 'css/blog-login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/common.css' %}">
+<!-- body部分 -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.js"></script>
+</head>
+<body>
+ <!-- 导航栏 -->
+    <div class="nav">
+        <img src={% static 'image/log.png' %} alt="">
+        <span class="title"><a href="{% url 'index' %}">背包问题知识社区平台</a></span>
+         <!-- 使用 span 把左右两侧的元素给撑开 -->
+         <span class="spacer"></span>
+        <a href={% url 'index' %}>首页</a>
+        <a href={% url 'resource' %}>资源</a>
+        <a href={% url 'community' %}>社区</a>
+        <a href={% url 'nlist' %}>笔记</a>
+        <a href={% url 'blog_list' %}>个人</a>
+        <a href={% url 'blog_login' %}>退出</a>
+    </div>
+        <!--  中间部分  -->
+    <div class="container m-padded-tb-large" >
+        <div class="ui container" style="border-radius: 50px;">
+            <div class="ui stackable grid" >
+
+                <!-- left 博客列表 -->
+
+                <div class="eleven wide column">
+                    <!-- header -->
+                    <div class="ui attached segment" style="border-radius: 5px;background-color:rgba(255,255,255,0.7);">
+                        <div class="ui middle aligned two column grid">
+                            <div class="column">
+                                <h3 class="ui teal header">博客</h3>
+                            </div>
+                            <div class="right aligned column">
+                                共<h3 class="ui orange header m-text-thin m-inline-block">14</h3>篇
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- content -->
+                    <div class="ui attached segment" style="border-radius: 5px;background-color:rgba(255,255,255,0.7);">
+                        <div style="padding: 0 1.2em" class="ui vertical segment m-padded-tb-large">
+                            <div class="ui mobile reversed stackable grid">
+                                <div class="eleven wide column">
+                                    <a href="{% url 'pindex' %}"><h3 class="ui header">01背包问题及相关题目分析</h3></a>
+                                    <a href="{% url 'pindex' %}"><p class="m-text">01背包问题及相关题目分析</p></a>
+                                    <div class="ui grid">
+                                        <div class="eleven wide column">
+                                            <div class="ui mini horizontal link list">
+                                                <div class="item">
+                                                    <img src="https://picsum.photos/id/1/100/100" alt="" class="ui avatar image">
+                                                    <div class="content"><a href="#" class="header">观山奇</a></div>
+                                                </div>
+                                                <div class="item">
+                                                    <i class="calendar icon"></i>
+                                                    2021-6-10
+                                                </div>
+                                                <div class="item">
+                                                    <i class="eye icon"></i>
+                                                    1000+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="five wide column">
+                                    <a href="#" target="_blank">
+                                        <img src="https://picsum.photos/id/1/800/400" alt="" class="ui rounded image">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="padding: 0 1.2em" class="ui vertical segment m-padded-tb-large">
+                            <div class="ui mobile reversed stackable grid">
+                                <div class="eleven wide column">
+                                    <a href="{% url 'pindex' %}"><h3 class="ui header">动态规划之背包问题系列 </h3></a>
+                                    <a href="{% url 'pindex' %}"><p class="m-text">动态规划之背包问题系列 </p></a>
+                                    <div class="ui grid">
+                                        <div class="eleven wide column">
+                                            <div class="ui mini horizontal link list">
+                                                <div class="item">
+                                                    <img src="https://picsum.photos/id/1/100/100" alt="" class="ui avatar image">
+                                                    <div class="content"><a href="#" class="header">观山奇</a></div>
+                                                </div>
+                                                <div class="item">
+                                                    <i class="calendar icon"></i>
+                                                    2021-6-10
+                                                </div>
+                                                <div class="item">
+                                                    <i class="eye icon"></i>
+                                                    1000+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="five wide column">
+                                    <a href="#" target="_blank">
+                                        <img src="https://picsum.photos/id/1/800/400" alt="" class="ui rounded image">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="padding: 0 1.2em" class="ui vertical segment m-padded-tb-large">
+                            <div class="ui mobile reversed stackable grid">
+                                <div class="eleven wide column">
+                                    <a href="https://www.jianshu.com/p/50af9094a2ac"><h3 class="ui header">三种基本背包问题 </h3></a>
+                                    <a href="https://www.jianshu.com/p/50af9094a2ac"><p class="m-text">三种基本背包问题 </p></a>
+                                    <div class="ui grid">
+                                        <div class="eleven wide column">
+                                            <div class="ui mini horizontal link list">
+                                                <div class="item">
+                                                    <img src="https://picsum.photos/id/1/100/100" alt="" class="ui avatar image">
+                                                    <div class="content"><a href="#" class="header">观山奇</a></div>
+                                                </div>
+                                                <div class="item">
+                                                    <i class="calendar icon"></i>
+                                                    2021-6-10
+                                                </div>
+                                                <div class="item">
+                                                    <i class="eye icon"></i>
+                                                    1000+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="five wide column">
+                                    <a href="#" target="_blank">
+                                        <img src="https://picsum.photos/id/1/800/400" alt="" class="ui rounded image">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="padding: 0 1.2em" class="ui vertical segment m-padded-tb-large">
+                            <div class="ui mobile reversed stackable grid">
+                                <div class="eleven wide column">
+                                    <a href="https://leetcode.cn/circle/article/KPsfIC/"><h3 class="ui header">01背包问题及相关题目分析</h3></a>
+                                    <a href="https://leetcode.cn/circle/article/KPsfIC/"><p class="m-text">01背包问题及相关题目分析</p></a>
+                                    <div class="ui grid">
+                                        <div class="eleven wide column">
+                                            <div class="ui mini horizontal link list">
+                                                <div class="item">
+                                                    <img src="https://picsum.photos/id/1/100/100" alt="" class="ui avatar image">
+                                                    <div class="content"><a href="#" class="header">观山奇</a></div>
+                                                </div>
+                                                <div class="item">
+                                                    <i class="calendar icon"></i>
+                                                    2021-6-10
+                                                </div>
+                                                <div class="item">
+                                                    <i class="eye icon"></i>
+                                                    1000+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="five wide column">
+                                    <a href="#" target="_blank">
+                                        <img src="https://picsum.photos/id/1/800/400" alt="" class="ui rounded image">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="padding: 0 1.2em" class="ui vertical segment m-padded-tb-large">
+                            <div class="ui mobile reversed stackable grid">
+                                <div class="eleven wide column">
+                                    <a href="https://leetcode.cn/circle/article/KPsfIC/"><h3 class="ui header">01背包问题及相关题目分析</h3></a>
+                                    <a href="https://leetcode.cn/circle/article/KPsfIC/"><p class="m-text">01背包问题及相关题目分析</p></a>
+                                    <div class="ui grid">
+                                        <div class="eleven wide column">
+                                            <div class="ui mini horizontal link list">
+                                                <div class="item">
+                                                    <img src="https://picsum.photos/id/1/100/100" alt="" class="ui avatar image">
+                                                    <div class="content"><a href="#" class="header">观山奇</a></div>
+                                                </div>
+                                                <div class="item">
+                                                    <i class="calendar icon"></i>
+                                                    2021-6-10
+                                                </div>
+                                                <div class="item">
+                                                    <i class="eye icon"></i>
+                                                    1000+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="five wide column">
+                                    <a href="#" target="_blank">
+                                        <img src="https://picsum.photos/id/1/800/400" alt="" class="ui rounded image">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="padding: 0 1.2em" class="ui vertical segment m-padded-tb-large">
+                            <div class="ui mobile reversed stackable grid">
+                                <div class="eleven wide column">
+                                    <a href="https://leetcode.cn/circle/article/KPsfIC/"><h3 class="ui header">01背包问题及相关题目分析</h3></a>
+                                    <a href="https://leetcode.cn/circle/article/KPsfIC/"><p class="m-text">01背包问题及相关题目分析</p></a>
+                                    <div class="ui grid">
+                                        <div class="eleven wide column">
+                                            <div class="ui mini horizontal link list">
+                                                <div class="item">
+                                                    <img src="https://picsum.photos/id/1/100/100" alt="" class="ui avatar image">
+                                                    <div class="content"><a href="#" class="header">观山奇</a></div>
+                                                </div>
+                                                <div class="item">
+                                                    <i class="calendar icon"></i>
+                                                    2021-6-10
+                                                </div>
+                                                <div class="item">
+                                                    <i class="eye icon"></i>
+                                                    1000+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="five wide column">
+                                    <a href="#" target="_blank">
+                                        <img src="https://picsum.photos/id/1/800/400" alt="" class="ui rounded image">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="padding: 0 1.2em" class="ui vertical segment m-padded-tb-large">
+                            <div class="ui mobile reversed stackable grid">
+                                <div class="eleven wide column">
+                                    <a href="https://leetcode.cn/circle/article/KPsfIC/"><h3 class="ui header">01背包问题及相关题目分析</h3></a>
+                                    <a href="https://leetcode.cn/circle/article/KPsfIC/"><p class="m-text">01背包问题及相关题目分析</p></a>
+                                    <div class="ui grid">
+                                        <div class="eleven wide column">
+                                            <div class="ui mini horizontal link list">
+                                                <div class="item">
+                                                    <img src="https://picsum.photos/id/1/100/100" alt="" class="ui avatar image">
+                                                    <div class="content"><a href="#" class="header">观山奇</a></div>
+                                                </div>
+                                                <div class="item">
+                                                    <i class="calendar icon"></i>
+                                                    2021-6-10
+                                                </div>
+                                                <div class="item">
+                                                    <i class="eye icon"></i>
+                                                    1000+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="five wide column">
+                                    <a href="#" target="_blank">
+                                        <img src="https://picsum.photos/id/1/800/400" alt="" class="ui rounded image">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- footer -->
+                    <div class="ui bottom attached segment" style="background-color:rgba(255,255,255,0.7);">
+                        <div class="ui middle aligned two column grid">
+                            <div class="column">
+                                <a href="#" class="ui mini teal basic button">上一页</a>
+                            </div>
+                            <div class="right aligned column">
+                                <a href="#" class="ui mini teal basic button">下一页</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- right card卡片 -->
+                <div class="five wide column">
+
+                    <!-- 分类 -->
+                    <div class="ui segments" style="background-color:rgba(255,255,255,0.7);">
+                        <div class="ui secondary segment">
+                            <div class="ui two column grid">
+                                <div class="column">
+                                    <i class="idea icon"></i>分类
+                                </div>
+                                <div class="right aligned column">
+                                    <a href="#" target="_blank">more <i class="angle double right icon"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui teal segment" style="background-color:rgba(255,255,255,0.7);">
+                            <div class="ui fluid vertical menu">
+                                <a href="#" class="item">学习日志 <div class="ui teal basic left pointing label">14</div></a>
+                                <a href="#" class="item">学习日志 <div class="ui teal basic left pointing label">14</div></a>
+                                <a href="#" class="item">学习日志 <div class="ui teal basic left pointing label">14</div></a>
+                                <a href="#" class="item">学习日志 <div class="ui teal basic left pointing label">14</div></a>
+                                <a href="#" class="item">学习日志 <div class="ui teal basic left pointing label">14</div></a>
+                                <a href="#" class="item">学习日志 <div class="ui teal basic left pointing label">14</div></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 标签 -->
+                    <div class="ui segments" style="background-color:rgba(255,255,255,0.7);">
+                        <div class="ui secondary segment">
+                            <div class="ui two column grid">
+                                <div class="column">
+                                    <i class="tags icon"></i>标签
+                                </div>
+                                <div class="right aligned column">
+                                    <a href="#" target="_blank">more <i class="angle double right icon"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui teal segment">
+                            <a href="#" target="_blank" class="ui teal basic left pointing label m-padded-tb-tiny m-margin-tb-tiny">方法论<div class="detail">10</div></a>
+                            <a href="#" target="_blank" class="ui teal basic left pointing label m-padded-tb-tiny m-margin-tb-tiny">方法论<div class="detail">10</div></a>
+                            <a href="#" target="_blank" class="ui teal basic left pointing label m-padded-tb-tiny m-margin-tb-tiny">方法论<div class="detail">10</div></a>
+                            <a href="#" target="_blank" class="ui teal basic left pointing label m-padded-tb-tiny m-margin-tb-tiny">方法论<div class="detail">10</div></a>
+                            <a href="#" target="_blank" class="ui teal basic left pointing label m-padded-tb-tiny m-margin-tb-tiny">方法论<div class="detail">10</div></a>
+                        </div>
+                    </div>
+
+                    <!-- 最新推荐 -->
+                    <div class="ui segments m-margin-top-large">
+                        <div class="ui secondary segment">
+                            <i class="bookmark icon"></i>最新推荐
+                        </div>
+                        <div class="ui segment">
+                            <a href="#" target="_blank" class=" m-black m-text-thin">用户故事（User Story）</a>
+                        </div>
+                        <div class="ui segment">
+                            <a href="#" target="_blank" class=" m-black m-text-thin">用户故事（User Story）</a>
+                        </div>
+                        <div class="ui segment">
+                            <a href="#" target="_blank" class=" m-black m-text-thin">用户故事（User Story）</a>
+                        </div>
+                    </div>
+
+                    <!-- QR -->
+                    <h4 class="ui horizontal divider header m-margin-top-large">扫码关注</h4>
+                    <div class="ui centered card"  style="width: 10em;">
+                        <img src="{% static 'image/log.png' %}" alt="" class="ui rounded image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

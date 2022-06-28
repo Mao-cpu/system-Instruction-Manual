@@ -1,0 +1,53 @@
+{% load static %}
+<!doctype html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑博客</title>
+    <link rel="stylesheet" href="{% static 'css/pcommon.css'%}">
+    <link rel="stylesheet" href="{% static 'css/pedit.css' %}">
+    <link rel="stylesheet" href="{% static 'editormd/css/editormd.min.css' %}">
+</head>
+<body>
+<div class="nav">
+    <!-- 头部导航 navigator -->
+   <img src="{% static 'image/log.png' %}" alt="logo 图">
+    <a href="{% url 'index' %}"><span class="title">背包知识社区平台</span></a>
+    <!-- 无意义的，为了撑开布局空间 -->
+    <span class="spacer"></span>
+    <a href="{% url 'plist' %}">退出</a>
+    <!-- 注销：删除用户的登录状态，需要动态操作，暂时不管 -->
+</div>
+
+<div class="blog-edit-container">
+    <!-- 临时放在 form 表单中，直接跳转到文章正文页，以后学了动态会修改 -->
+    <form action="{% url 'plist' %}" style="border-radius: 8px">
+        <div class="title">
+            <input type="text" placeholder="请填写文章标题" id="title" style="width: 860px;margin-left: 60px;border-radius: 8px;">
+            <button id="submit" style="margin-right: 60px;">发布文章</button>
+        </div>
+        <div class="field" >
+      <div id="md-content" style="z-index: 1 !important;"></div>
+    <textarea placeholder="博客内容" name="content" style="display: none;background-color: rgba(255,255,255,0.3)" ></textarea>
+      </div>
+
+    </form>
+</div>
+<script src="{% static 'js/jquery-2.2.4.min.js' %}"></script>
+<script src="{% static '/editormd/editormd.min.js' %}"></script>
+   <script>
+        //markdown编辑器初始化
+        let contentEditor;
+        $(function (){
+            //这里的"md-content" 就是textacre的名字
+            contentEditor = editormd("md-content",{
+                width : "90%",
+                height : 500,
+                syncScrolling: "single",
+                // 第二个lib前面的路径是该文件的绝对路径
+                path : "{% static 'editormd/lib/' %}"
+            });
+        });
+</script>
+</body>
+</html>

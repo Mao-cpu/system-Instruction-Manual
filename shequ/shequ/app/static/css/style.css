@@ -1,0 +1,53 @@
+li a {
+    color: pink;
+}
+
+#title {
+    text-align: center;
+    color: pink;
+    margin-top: 50px; 
+}
+
+body {
+    background: white url("images/2.jpg") no-repeat center center;
+}
+
+
+#banner,#content{width:750px; margin:0 auto}
+
+#banner{
+    height:30px;
+    background:#444693;
+}
+
+ul{
+    list-style:none
+}
+
+ul li{
+    float:left;
+    width:80px;
+    text-align:center;
+    border-right:2px solid #aba;
+    padding-top:5px;
+    height:25px;
+}
+
+a{
+    text-decoration:none;
+}
+
+#content{
+    margin-top:0px;
+    height:auto;
+    background:#;
+    text-indent:2em;
+    border:0px solid #EBD3E8;
+    padding:10px 5px 5px 10px;
+}
+#textarea1{
+    width: 700px;
+    height: 800px;
+    color: yellow;
+    font-size: 20px;
+}

@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客编辑页</title>
+    <link rel="stylesheet" href="{% static 'css/blog-login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/common.css' %}">
+    <!-- 引入依赖 -->
+    <link rel="stylesheet" href="{% static 'editor.md-master/css/editormd.min.css'%}">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{% static 'editor.md-master/lib/marked.min.js' %}"></script>
+    <script src="{% static 'editor.md-master/lib/prettify.min.js' %}"></script>
+    <script src="{% static 'editor.md-master/editormd.js' %}"></script>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <div class="nav">
+         <img src={% static 'image/log.png' %} alt="">
+        <span class="title"><a href="{% url 'index' %}">背包问题知识社区平台</a></span>
+         <!-- 使用 span 把左右两侧的元素给撑开 -->
+         <span class="spacer"></span>
+        <a href={% url 'index' %}>首页</a>
+        <a href={% url 'resource' %}>资源</a>
+        <a href={% url 'blog_edit' %}>社区</a>
+        <a href={% url 'blog_edit' %}>笔记</a>
+        <a href={% url 'blog_list' %}>个人</a>
+    </div>
+    <!-- 版心 -->
+    <div class="blog-edit-container">
+        <!-- 标题编辑区 -->
+        <div class="title">
+            <input type="text" placeholder="在这里写下文章标题" id="title" style="height: 40px;width:500px;margin-left: 40px;margin-top: 10px;">
+            <input type="button" value="发布文章" id="submit" style="margin-left: 50px;background-color: #00c4ff">
+        </div>
+        <!-- 内容编辑区 -->
+        <textarea name="text" cols="100" rows="25" style="margin-left: 40px;
+        background-color:rgba(255,255,255,0.7);
+        font-size: 15px;
+        margin-top:10px">
+
+        </textarea>
+    </div>
+
+    <script>
+        // 初始化 editor.md
+        let editor = editormd("editor", {
+            // 这里的尺寸必须在这里设置，设置样式会被 editormd 自动覆盖
+            width: "100%",
+            // 设定编辑高度
+            height: "500px",
+            // 编辑页中的初始化内容
+            markdown: "# 在这里写下一篇博客",
+            //指定 editor.md 依赖的插件路径
+            path: "editor.md-master/lib/"
+        });
+    </script>
+</body>
+</html>

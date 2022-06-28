@@ -1,0 +1,103 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+/*    去掉填充物*/
+}
+html,body{
+    height: 100%;
+    background-image:url(images/2.jpg) ;
+    background-position:center center ;
+    /*居中*/
+    background-size:cover;
+    /*全覆盖*/
+    background-repeat:no-repeat;
+    /*无重复*/
+}
+.nav{
+    /*导航栏设置*/
+    width:100%;
+    height:50px;
+    background-color:rgba(51,51,51,.4);
+    color:#fff;
+    /*字体为白色*/
+    display:flex;
+    /*弹性布局*/
+    justify-content: left;
+    align-items: center;
+    /*平向左，居中对齐*/
+}
+.nav img{
+    /*图片设置*/
+    /*规定图片大小时，尽量只规定高或者宽，这样图片不会被拉伸变形*/
+    height: 40px;
+    margin-left: 30px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+.nav .spacer{
+    width: 70%;
+    /*把空格撑开*/
+}
+.nav a{
+    /*a标签设置*/
+    color:#fff;
+    /*标签颜色：白色*/
+    text-decoration: none;
+    /*文本装饰：无*/
+    padding: 0 10px;
+    /*左右空开10像素*/
+}
+.container{
+    height: calc(100% - 50px);
+    width:1200px;
+    margin: 0 auto;
+    /*居中*/
+    display: flex;
+    justify-content: space-between;
+    /*两端没空隙*/
+    /*水平上按分割的方式对齐*/
+    align-items: center;
+    /*垂直对齐*/
+}
+.container-left{
+    height:100%;
+    width:300px;
+}
+.container-right{
+    height: 100%;
+    width:895px;
+    /*当内容超过外部容器的高度时，怎么办？auto：没超过时正常显示，超出时，出现滚动条*/
+    overflow: auto;
+    background-color:rgba(255,255,255,.8);
+    border-radius: 10px;
+}
+.card{
+    background-color:rgba(255,255,255,.8);
+    border-radius:4px;
+    padding: 30px;
+    /*margin:auto 0 ;*/
+}
+.card .avatar{
+    margin-left: 70px;
+    width: 100px;
+    border-radius: 100%;
+}
+.card h3{
+    text-align: center;
+    padding: 30px;
+}
+.card a{
+    display: block;
+    /*强制改为块元素，可以设置宽高*/
+    text-align: center;
+    color: #999;
+    text-decoration: none;
+    padding: 10px;
+}
+.card .counter{
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+    /*两边有空隙*/
+}

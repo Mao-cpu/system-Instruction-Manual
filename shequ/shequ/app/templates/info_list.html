@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css">
+<link rel="stylesheet" href="{% static 'css/blog-login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/common.css' %}">
+<!-- body部分 -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.js"></script>
+    <style>
+        table{
+    width: 90%;
+    margin: auto;
+    {#border-collapse: collapse;#}
+}
+
+table caption{
+    font-size: 2em;
+    font-weight: bold;
+    margin: 1em 0;
+}
+
+th,td{
+    border: 1px solid #999;
+    text-align: center;
+    padding: 10px 50px;
+}
+
+table thead tr{
+    background-color: #008c8c;
+    color: #fff;
+}
+
+table tbody tr:nth-child(odd){
+    background-color: #eee;
+}
+
+table tbody tr:hover{
+    background-color: #ccc;
+}
+
+table tbody tr td:first-child{
+    color: #f40;
+}
+
+table tfoot tr td{
+    text-align: right;
+    padding-right: 20px;
+}
+
+    </style>
+</head>
+<body>
+<!-- 导航栏 -->
+    <div class="nav">
+         <img src={% static 'image/log.png' %} alt="">
+        <a href="{% url 'mindex' %}"><span class="title">背包问题知识社区平台</span></a>
+{#        <span class="title">背包问题知识社区平台</span>#}
+         <!-- 使用 span 把左右两侧的元素给撑开 -->
+         <span class="spacer" style="width: 500px;"></span>
+        <a href={% url 'info_list' %}>用户管理</a>
+        <a href={% url 'page_list' %}>资源管理</a>
+        <a href={% url 'page_add' %}>资源审核</a>
+        <a href={% url 'mblog_list' %}>个人</a>
+    </div>
+<h3>用户管理</h3>
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"></div>
+<div style="width: 90%;margin-left: 50px;margin-top: 5px;height: 400px;background-color: rgba(231,231,231,0.85);border-radius: 8px">
+  <table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>姓名</th>
+        <th>密码</th>
+        <th>电话</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for i in user %}
+        <tr>
+            <td>{{ i.id }}</td>
+            <td>{{ i.name }}</td>
+            <td>{{ i.password }}</td>
+            <td>{{ i.phone }}</td>
+        <td>
+                <button style="background-color: #6C95F5;color: #e7e7e7">设管</button>
+                <a href="/info/delete/?nid={{ i.id }}">
+                <button style="margin-left: 10px;background-color: rgb(105,146,240);color: #e7e7e7">删除</button>
+                 </a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+</div>
+</body>
+</html>

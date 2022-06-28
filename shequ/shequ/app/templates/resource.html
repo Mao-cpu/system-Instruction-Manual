@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>资源上传</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css">
+    <link rel="stylesheet" href="{% static 'css/blog-login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/common.css' %}">
+    <style>
+    table{
+    width: 90%;
+    margin: auto;
+    {#border-collapse: collapse;#}
+}
+
+table caption{
+    font-size: 2em;
+    font-weight: bold;
+    margin: 1em 0;
+}
+
+th,td{
+    border: 1px solid #999;
+    text-align: center;
+    padding: 10px 50px;
+}
+
+table thead tr{
+    background-color: rgba(0, 140, 140, 1.75);
+    color: #fff;
+}
+
+table tbody tr:nth-child(odd){
+    background-color: #eee;
+}
+
+table tbody tr:hover{
+    background-color: #ccc;
+}
+
+table tbody tr td:first-child{
+    color: #f40;
+}
+
+table tfoot tr td{
+    text-align: right;
+    padding-right: 20px;
+}
+
+    </style>
+<!-- body部分 -->
+{#<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>#}
+{#<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.js"></script>#}
+</head>
+<body>
+<!-- 导航栏 -->
+    <div class="nav">
+         <img src={% static 'image/log.png' %} alt="">
+        <span class="title"><a href="{% url 'index' %}">背包问题知识社区平台</a></span>
+         <!-- 使用 span 把左右两侧的元素给撑开 -->
+         <span class="spacer"></span>
+        <a href={% url 'index' %}>首页</a>
+        <a href={% url 'resource' %}>资源</a>
+        <a href={% url 'community' %}>社区</a>
+        <a href={% url 'nlist' %}>笔记</a>
+        <a href={% url 'blog_list' %}>个人</a>
+    </div>
+
+{#<div class="container">#}
+{#    <form method="post" enctype="multipart/form-data">#}
+{#        {% csrf_token %}#}
+{#        <input type="text" name="username">#}
+{#        <input type="file" name="avatar">#}
+{#        <input type="submit" value="提交">#}
+{#    </form>#}
+{#</div>#}
+<div class="container" style="background-color: rgba(231,231,231,0.65);margin-left: 50px;margin-top:30px;width: 90%;height: 80px;border-radius: 10px;">
+    <div class="panel panel-default" style="margin-left: 10px;">
+{#        <div class="panel-heading" style="margin-bottom: 10px">#}
+{#            <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>#}
+{#            上传资源#}
+{#        </div>#}
+        <div class="panel-body" style="width: 100%">
+            <form method="post" enctype="multipart/form-data" >
+                {% csrf_token %}
+                <div class="form-group" style="margin-bottom: 10px">
+                     <input type="file">
+                </div>
+                <input type="submit" value="上传" class="btn btn-info btn-sm">
+            </form>
+        </div>
+    </div>
+</div>
+<div style="width: 90%;margin-left: 50px;margin-top: 5px;height: 80%;background-color: rgba(231,231,231,0.85);border-radius: 8px">
+    <<table border="1">
+         <tr>
+             <th>ID</th>
+            <th>标题</th>
+            <th>上传时间</th>
+            <th>更新时间</th>
+             <th>操作</th>
+         </tr>
+    {% for i in r1 %}
+         <tr>
+            <td>{{ i.id }}</td>
+            <td>{{ i.title }}</td>
+            <td>{{ i.creat_time }}</td>
+            <td>{{ i.update_time }}</td>
+            <td>
+                <button style="background-color: #6C95F5;color: #e7e7e7">下载</button>
+                <a href="/info/delete2/?nid1={{ i.id }}">
+                <button style="margin-left: 10px;background-color: rgb(105,146,240);color: #e7e7e7">删除</button>
+                 </a>
+            </td>
+         </tr>
+    {% endfor %}
+         </table>
+</div>
+<script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+<script src="{% static 'plugins/bootstrap-3.4.1-dist/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

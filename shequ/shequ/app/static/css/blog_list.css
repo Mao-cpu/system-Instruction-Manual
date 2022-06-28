@@ -1,0 +1,53 @@
+/* 这个 CSS 专门针对博客列表页来设置样式 */
+
+.blog {
+    width: 100%;
+    padding: 10px 20px;
+}
+
+/* 博客的标题 */
+.blog .title {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+/* 博客的日期 */
+.blog .date {
+    text-align: center;
+    padding-bottom: 10px;
+    color: grey;
+}
+
+/* 博客的描述 */
+.blog .desc {
+    text-indent: 2em;
+}
+
+/* 查看博客详情的按钮 */
+.blog .detail {
+    display: block;
+    width: 120px;
+    color: grey;
+    height: 30px;
+    /* 设置边框 */
+    border: 2px solid grey;
+    /* 文字水平居中 */
+    text-align: center;
+    /* 文字垂直居中 */
+    line-height: 30px;
+    /* 去掉下划线 */
+    text-decoration: none;
+    /* 让按钮来到屏幕中间 */
+    margin: 10px auto;
+    /* 加上一个过度效果 */
+    transition: all 1s;
+}
+
+/* 实现鼠标悬停在按钮上时有一个背景色切换的效果 */
+.blog .detail:hover {
+    background-color: grey;
+    color: white;
+}

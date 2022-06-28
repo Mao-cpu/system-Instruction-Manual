@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册页</title>
+    <link rel="stylesheet" href="{% static 'css/blog-login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/common.css' %}">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <div class="nav">
+        <img src={% static 'image/log.png' %} alt="">
+        <span class="title"><a href="{% url 'blog_login' %}">背包问题知识社区平台</a></span>
+         <!-- 使用 span 把左右两侧的元素给撑开 -->
+    </div>
+    <!-- 登录页面的版心 -->
+    <div class="login-container">
+        <form class="login-dialog" method="post">
+            {% csrf_token %}
+            <h3>注册</h3>
+            <div class="row1">
+                <span>用户名</span>
+                <input type="text" name="user" placeholder="用户名">
+            </div>
+            <div class="row1">
+                <span>密码</span>
+                <input type="text" name="pwd" placeholder="密码">
+            </div>
+            <div class="row1">
+                <span>电话</span>
+                <input type="text" name="phone" placeholder="电话">
+            </div>
+            <div class="row2">
+                <input type="submit" value="注册">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

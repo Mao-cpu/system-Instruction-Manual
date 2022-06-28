@@ -1,0 +1,50 @@
+.blog{
+    width:100%;
+    /*上下左右边距*/
+    padding: 30px 20px;
+    /*底部边界虚线：黑色*/
+    border-bottom: 2px dotted #000;
+}
+.blog .title{
+    color:black;
+    /*字体大小*/
+    font-size: 20px;
+    /*字体粗细程度*/
+    font-weight: 700;
+    /*居中*/
+    text-align: center;
+    padding: 10px 0;
+}
+.blog .date{
+    color: #008000;
+    margin-top: 10px;
+    text-align: center;
+
+}
+.blog .desc{
+    color:#000;
+    /*有两空格，首行缩进*/
+    text-indent: 2em;
+    /*上外边距：10像素的空白*/
+    margin-top: 10px;
+}
+.blog .detail{
+    /*默认行展示，改为块展示*/
+    display: block;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    margin: 10px auto 0 auto;
+    border: 2px solid black;
+    /*给颜色上加过滤效果，动画的持续时间*/
+    transition: all .5s;
+}
+/* :hover伪类选择器，完整的意思：.blog下的 .detail在鼠标划过时，应用该样式*/
+.blog .detail:hover{
+    background-color:#000;
+    color: #fff;
+}
+

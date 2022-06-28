@@ -1,0 +1,66 @@
+{% load static %}
+<!doctype html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>博客平台 | 正文</title>
+    <link rel="stylesheet" href="{% static 'css/pcommon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/article.css' %}" >
+</head>
+<body>
+<div class="nav">
+    <!--   头部导航 navigator     -->
+    <img src="{% static 'image/log.png' %}" alt="logo 图">
+    <a href="{% url 'index' %}"><span class="title">背包问题知识社区平台</span></a>
+    <!-- 无意义的，为了撑开布局空间 -->
+    <span class="spacer"></span>
+{#    <a href="{% url 'blog_edit' %}" style="margin-right: 30px">写博客</a>#}
+    <a href="{% url 'plist' %}" style="margin-right: 30px">退出</a>
+    <!--  注销：删除用户的登录状态，需要动态操作，暂时不管-->
+{#    <a href="login.html">注销</a>#}
+</div>
+<div class="container" style="background-image: {% static 'css/images/2.jpg' %}">
+    <!--  内容区-->
+    <div class="container-left">
+        <!--  个人信息-->
+        <div class="card">
+            <a href="{% url 'p_i' %}"></a><img src="{% static 'css/images/2.jpg' %}" alt="作者头像" class="avatar">
+            <h3>Moki</h3>
+            <a href="https://gitee.com/ShiRuiup" target="_blank">我的git</a>
+            <!--                新的浏览器窗口打开新链接-->
+            <div class="counter">
+                <span>文章</span>
+                <span>分类</span>
+            </div>
+            <div class="counter">
+                <span>10</span>
+                <span>2</span>
+            </div>
+        </div>
+
+    </div>
+    <div class="container-right">
+        <div class="blog-content">
+            <h3>【动态规划】一次搞定三种背包问题</h3>
+            <div class="date">2022-1-22</div>
+            <!--博客正文-->
+            <p>
+看完前面四篇关于背包问题的文章，你会发现背包问题其实也不过如此，而且它们之间有很多相似的地方，本篇文章就来揭开它们面纱，将背包问题彻底搞定。
+   </p>
+            <p>01背包： 有N件物品和一个容量为V的背包，第i件物品消耗的容量为Ci，价值为Wi，求解放入哪些物品可以使得背包中总价值最大。
+                <br>完全背包： 有N种物品和一个容量为V的背包，每种物品都有无限件可用，第i件物品消耗的容量为Ci，价值为Wi，求解放入哪些物品可以使得背包中总价值最大。
+                <br>多重背包： 有N种物品和一个容量为V的背包，第i种物品最多有Mi件可用，每件物品消耗的容量为Ci，价值为Wi，求解入哪些物品可以使得背包中总价值最大。
+            </p>
+            <p>三种背包问题都有一个共同的限制，那就是背包容量，背包的容量是有限的，这便限制了物品的选择，而三种背包问题的共同目的，便是让背包中的物品价值最大。 不同的地方在于物品数量的限制，01背包问题中，每种物品只有一个，对于每种物品而言，便只有选和不选两个选择。完全背包问题中，每种物品有无限多个，所以可选的范围要大很多。在多重背包问题中，每种物品都有各自的数量限制。 三种背包问题虽然对于物品数量的限制不一样，但都可以转化为01背包问题来进行思考。在完全背包问题中，虽然每种物品都可以选择无限个，但由于背包容量有限，实际上每种物品可以选择的数量也是有限的，那么将每种物品都看做是 V/Ci 种只有一件的不同物品，不就成了01背包问题吗？对于多重背包也是如此，只是每种物品的膨胀数量变成了 min{Mi, V/Ci}。 所以说，01背包问题是所有背包问题的基础，弄懂了01背包问题后，完全背包和多重背包就没有什么难的地方了。
+
+            </p>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

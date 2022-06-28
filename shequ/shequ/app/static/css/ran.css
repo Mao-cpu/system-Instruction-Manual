@@ -1,0 +1,160 @@
+/*
+    DJANGO Admin styles
+*/
+
+li{list-style:none}
+a{text-decoration:none}
+a:hover{text-decoration:underline}
+
+body {
+    margin: 80px;
+    padding: 20px;
+    font-size: 16px;
+    /*font-family: "Roboto","Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
+    color: #333;*/
+    background: url("images/background3.jpg") no-repeat center top;
+}
+
+/* LINKS */
+
+h2 {
+    font-size: 32px;
+    color: yellow;
+    margin: 100 0 10 0;
+}
+
+#div1{
+    color:pink;
+    float: right;
+    font-size: 24px;
+}
+
+
+#box {
+    width: 980px;
+    height: 700px;
+}
+a:link, a:visited {
+    color: pink;
+    text-decoration: none;
+}
+
+a:focus, a:hover {
+    color: yellow;
+}
+
+a:focus {
+    text-decoration: underline;
+}
+
+/*hearde部分*/
+.header {
+    width: 980px;
+    height: 59px;
+    margin: 0 auto;
+}
+.header h1 a {
+    text-align: left;
+    position:absolute;
+    left:50px;
+    top:50px;
+}
+
+.page li{
+    width: 104px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    float: left;
+    background: url("../images/line.jpg") no-repeat right center;
+    font-size: 18px;
+    font-weight: 700;
+    /*text-align: left;*/
+    position:relative;
+    left:40px;
+    top:-40px;
+}
+
+/*nav导航栏部分*/
+.nav {
+
+    width: 980px;
+    height: 60px;
+    margin: 0 auto;
+}
+.navL {
+
+    width: 20px;
+    height: 60px;
+    background: url("../images/navL.jpg") no-repeat;
+    float: left;
+}
+.navC {
+    width: 940px;
+    height: 60px;
+    background: url("../images/navC.jpg") repeat-x;
+    float: left;
+}
+.navC li {
+    width: 104px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    float: left;
+    background: url("../images/line.jpg") no-repeat right center;
+    font-size: 18px;
+    font-weight: 700;
+    /*text-align: left;*/
+    position:relative;
+    left:125px;
+    top:-40px;
+}
+.navC li a {
+    color: #ffffff;
+}
+.navC .nobg {
+    background: none;
+}
+
+.banner li{
+
+    position:relative;
+    left:33%;
+    top:0px;
+}
+
+/*底部导航栏*/
+.subNav {
+    width: 980px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    background: url("../images/sub_nav.jpg") repeat-x;
+    margin:102px -74px -26px;
+    color: #ffffff;
+}
+.subNav a {
+    color: #ffffff;
+}
+.subNav span {
+    margin: 0 2px;
+}
+
+
+/*footer²¿·Ö*/
+.footer {
+    width: 100%;
+    height: 88px;
+    background: url("../images/footer.jpg") repeat-x;
+    /*border-bottom: 2px solid pink;*/
+}
+.footerIn {
+    width: 800px;
+    height:88px;
+    margin:0px 40px 0px 211px
+}
+.footer P {
+    float: left;
+    margin: 26px;
+    color: yellow;
+}
